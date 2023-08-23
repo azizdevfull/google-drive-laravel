@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleDriveController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('google/login',[GoogleDriveController::class,'googleLogin'])->name('google.login');
+Route::get('google-drive/file-upload',[GoogleDriveController::class,'googleDriveFilePpload'])->name('google.drive.file.upload');
